@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phishing project — Phishing Detection Toolkit</title>
+  <meta name="description" content="My phishing toolkit project made by Devin Sarfo." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="logo">
+      <div class="logo-icon">🛡</div>
+      Phishing<span> with us </span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="/" class="active">Detector</a></li>
+      <li><a href="/awareness">Awareness</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <div class="wrapper" style="padding-top:40px;padding-bottom:60px;">
+
+    <div style="margin-bottom:32px;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+        <h1 style="font-size:1.8rem;font-weight:800;">Phishing Detection Toolkit</h1>
+        <span class="mode-chip" id="analysis-mode" style="display:none;"></span>
+      </div>
+      <p style="color:var(--muted);font-size:.95rem;">
+        Analyse a URL or email with machine learning + heuristic feature analysis.
+        Click any flagged indicator to learn about the phishing technique.
+      </p>
+      <div id="error-box" style="display:none;margin-top:12px;background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.3);border-radius:8px;padding:10px 14px;font-size:.875rem;color:var(--red);"></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 380px;gap:24px;align-items:start;">
+
+      <!-- ── Left: Input + Results ── -->
+      <div>
+
+        <!-- Input card -->
+        <div class="card" style="margin-bottom:20px;">
+          <div class="tab-group">
+            <button class="tab-btn active" data-mode="url">URL Scanner</button>
+            <button class="tab-btn" data-mode="email">Email Analyser</button>
+          </div>
+
+          <div id="url-input-wrap">
+            <div class="form-group">
+              <label>Suspicious URL</label>
+              <input
+                type="text"
+                id="url-field"
+                placeholder="https://example.com/login..."
+                autocomplete="off"
+                spellcheck="false"
+              />
+            </div>
+          </div>
+
+          <div id="email-input-wrap" style="display:none;">
+            <div class="form-group">
+              <label>Email text / headers</label>
+              <textarea
+                id="email-field"
+                rows="7"
+                placeholder="Paste the full email body, subject line, headers, or any suspicious text here..."
+              ></textarea>
+            </div>
+          </div>
+
+          <button class="btn btn-primary btn-full" id="analyze-btn">
+            <span id="btn-spinner" class="spinner" style="display:none;"></span>
+            <span id="btn-text">Run Analysis</span>
+          </button>
+
+          <p id="ml-prob" style="display:none;margin-top:10px;font-size:.78rem;color:var(--purple);text-align:center;"></p>
+        </div>
+
+        <!-- Results -->
+        <div id="results-section" style="display:none;">
+
+          <!-- Verdict banner -->
+          <div class="verdict-banner" id="verdict-banner" style="margin-bottom:20px;">
+            <div class="verdict-icon" id="verdict-icon"></div>
+            <div style="flex:1;">
+              <div class="verdict-label" id="verdict-label"></div>
+              <div class="verdict-summary" id="verdict-summary"></div>
+            </div>
+            <div class="score-ring-wrap">
+              <div class="score-ring">
+                <svg width="90" height="90" id="score-svg">
+                  <circle class="track" cx="45" cy="45" r="36" stroke-width="8"/>
+                  <circle class="fill" id="score-fill" cx="45" cy="45" r="36" stroke-width="8"
+                    stroke-dasharray="226" stroke-dashoffset="226"
+                    style="transition:stroke-dashoffset 1s ease;"/>
+                </svg>
+                <div class="score-num" id="score-num">0</div>
+              </div>
+              <div class="score-label">Risk Score</div>
+            </div>
+          </div>
+
+          <!-- Stats row -->
+          <div class="stat-row" style="margin-bottom:20px;">
+            <div class="stat-chip">
+              <span class="val" id="stat-total">0</span>
+              <span class="lbl">Flags</span>
+            </div>
+            <div class="stat-chip" style="border-color:rgba(239,68,68,.3);">
+              <span class="val" id="stat-high" style="color:var(--red);">0</span>
+              <span class="lbl">High</span>
+            </div>
+            <div class="stat-chip" style="border-color:rgba(245,158,11,.3);">
+              <span class="val" id="stat-medium" style="color:var(--amber);">0</span>
+              <span class="lbl">Medium</span>
+            </div>
+            <div class="stat-chip" style="border-color:rgba(59,130,246,.3);">
+              <span class="val" id="stat-low" style="color:var(--blue);">0</span>
+              <span class="lbl">Low</span>
+            </div>
+          </div>
+
+          <!-- Indicators -->
+          <div class="section-title">Phishing Indicators (click to expand)</div>
+          <div class="indicator-list" id="indicator-list"></div>
+
+        </div>
+
+        <!-- Empty state -->
+        <div id="empty-state" class="card">
+          <div class="empty-state">
+            <div class="icon"></div>
+            <h3>Submit a URL or email to begin</h3>
+            <p>The ML model will extract features and flag suspicious phishing indicators,<br/>each with an educational explanation.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ── Right: Sidebar ── -->
+      <aside>
+
+        <!-- Quick examples -->
+        <div class="card" style="margin-bottom:16px;">
+          <div class="section-title">Quick Examples</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+
+            <div style="font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:var(--red);font-weight:700;margin-top:4px;">!!! Phishing Samples</div>
+
+            <button class="btn btn-secondary" style="justify-content:flex-start;font-size:.8rem;text-align:left;"
+              data-mode="url"
+              data-example="http://paypa1-secure.xyz/login?redirect=http://evil.com@192.168.1.1">
+              Phishing URL (IP + brand)
+            </button>
+
+            <button class="btn btn-secondary" style="justify-content:flex-start;font-size:.8rem;text-align:left;"
+              data-mode="url"
+              data-example="http://bit.ly/urgent-paypal-verify-account-now">
+              URL Shortener phish
+            </button>
+
+            <button class="btn btn-secondary" style="justify-content:flex-start;font-size:.8rem;text-align:left;"
+              data-mode="email"
+              data-example="From: support@paypa1-secure.tk
+Subject: URGENT: Your account will be suspended!
+
+Dear Customer,
+
+We have detected unauthorized access to your PayPal account. You must verify your password and credit card number immediately within 24 hours or your account will be permanently closed.
+
+Click here to verify: http://bit.ly/verify-paypal-now
+
+Do not ignore this warning.
+
+PayPal Security Team">
+            Phishing email (credential theft)
+            </button>
+
+            <div style="font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:var(--green);font-weight:700;margin-top:8px;">✓ Legitimate Samples</div>
+
+            <button class="btn btn-secondary" style="justify-content:flex-start;font-size:.8rem;"
+              data-mode="url"
+              data-example="https://www.amazon.co.uk/books/cybersecurity">
+              Legitimate Amazon URL
+            </button>
+
+            <button class="btn btn-secondary" style="justify-content:flex-start;font-size:.8rem;text-align:left;"
+              data-mode="email"
+              data-example="Hi Sarah,
+
+Just a reminder that your order #UK-38291 has been shipped. Expected delivery is Monday. You can track it at: https://www.amazon.co.uk/track
+
+Thanks,
+The Amazon Team">
+              Legitimate order email
+            </button>
+          </div>
+        </div>
+
+        <!-- How it works -->
+        <div class="card" style="margin-bottom:16px;">
+          <div class="section-title">How It Works</div>
+          <div style="font-size:.83rem;color:var(--muted);line-height:1.7;display:flex;flex-direction:column;gap:10px;">
+            <div>
+              <strong style="color:var(--text);">1. Feature Extraction</strong><br/>
+              Extracts 30 URL features or 18 email features (domain info, URL structure, language patterns, etc.)
+            </div>
+            <div>
+              <strong style="color:var(--text);">2. ML Ensemble</strong><br/>
+              Random Forest + Gradient Boosting + Logistic Regression vote on the probability of phishing.
+            </div>
+            <div>
+              <strong style="color:var(--text);">3. Heuristic Scoring</strong><br/>
+              Rule-based scoring adds explainability and catches patterns the ML may miss.
+            </div>
+            <div>
+              <strong style="color:var(--text);">4. Educational Output</strong><br/>
+              Each flag explains the phishing technique, helping you recognise it in future.
+            </div>
+          </div>
+        </div>
+
+        <!-- Tip box -->
+        <div class="highlight-box">
+          <div style="font-size:.8rem;font-weight:700;color:var(--accent2);margin-bottom:8px;">💡 Stay Safe</div>
+          <div style="font-size:.82rem;color:var(--muted);line-height:1.65;">
+            No tool is 100% accurate. Always verify suspicious links by visiting the official website directly, never clicking email links. When in doubt, don't click.
+          </div>
+          <div style="margin-top:12px;">
+            <a href="/awareness" class="btn btn-secondary" style="font-size:.8rem;padding:7px 14px;">
+             Learn about phishing →
+            </a>
+          </div>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+</main>
+
+<!-- Educational Popup -->
+<div class="popup-overlay" id="popup-overlay">
+  <div class="popup-box">
+    <div class="popup-title">
+      <span id="popup-title">Indicator Name</span>
+      <span class="badge popup-severity" id="popup-severity"></span>
+    </div>
+    <div class="popup-body" id="popup-body"></div>
+    <button class="btn btn-secondary popup-close btn-full" onclick="closePopup()">Close</button>
+  </div>
+</div>
+
+<footer>
+  Phishing Awareness Toolkit &mdash; Phishing Awareness &amp; Detection &mdash; Built with Python ML &amp; Vanilla JS, HTML, CSS &mdash; rights owned by devin sarfo &copy; 2026
+</footer>
+
+<script src="popup.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

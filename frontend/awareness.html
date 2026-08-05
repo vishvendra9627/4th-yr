@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phishing Awareness</title>
+  <meta name="description" content="Learn how phishing works, how it's evolving, and how to protect yourself." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="logo">
+      <div class="logo-icon">🛡</div>
+      Phishing<span>with devin</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="/"> Detector</a></li>
+      <li><a href="/awareness" class="active">Awareness</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <div class="wrapper">
+
+    <!-- Hero -->
+    <div class="hero">
+      <div class="hero-eyebrow">⚠ Cybersecurity Awareness</div>
+      <h1>Phishing: How It Works &<span> How It's Evolving</span></h1>
+      <p>
+        Phishing is still the easiest way attackers get inside because it targets people first, not technology. The more you recognise the real warning signs, the more likely you are to stop the scam before it starts.
+      </div>
+    </div>
+
+    <!-- Stats bar -->
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:60px;">
+      <div class="card" style="text-align:center;">
+        <div style="font-size:2rem;font-weight:800;color:var(--red);">3.4B</div>
+        <div style="font-size:.8rem;color:var(--muted);">Phishing emails sent daily worldwide</div>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div style="font-size:2rem;font-weight:800;color:var(--amber);">95%</div>
+        <div style="font-size:.8rem;color:var(--muted);">Of cyberattacks begin with a phishing email</div>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div style="font-size:2rem;font-weight:800;color:var(--accent2);">£4.5M</div>
+        <div style="font-size:.8rem;color:var(--muted);">Average cost of a phishing-triggered breach</div>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div style="font-size:2rem;font-weight:800;color:var(--blue);">1 in 3</div>
+        <div style="font-size:.8rem;color:var(--muted);">Users click phishing links in simulated tests</div>
+      </div>
+    </div>
+
+    <!-- Section 1: What is phishing -->
+    <section class="page-section" id="what-is">
+      <div class="section-header">
+        <h2> What Is Phishing?</h2>
+        <p>Phishing is a confidence trick that targets people, not systems. It uses trust, urgency and familiarity to make you act before you stop and check. Research shows that users learn safer habits faster when warnings explain exactly why a message is suspicious (Evaluating User Awareness of Phishing Threats, 2024).</p>
+      </div>
+
+      <div class="grid-2">
+        <div>
+          <div class="card" style="margin-bottom:16px;">
+            <div class="info-card-icon icon-red"></div>
+            <h3>Impersonation</h3>
+            <p>Attackers pretend to be banks, online services or colleagues by copying logos, email headers, and website design. If it looks familiar, many people stop looking for the real warning signs.</p>
+          </div>
+          <div class="card" style="margin-bottom:16px;">
+            <div class="info-card-icon icon-amber"></div>
+            <h3>Urgency &amp; Fear</h3>
+            <p>Messages pressure you with deadlines and threats: "Verify now or lose access." That rush is exactly what makes the scam work, because it shuts down careful decision-making.</p>
+          </div>
+          <div class="card">
+            <div class="info-card-icon icon-blue"></div>
+            <h3>Deceptive Links</h3>
+            <p>Link text can look real while the actual address goes somewhere dangerous. Checking the real URL is one of the best ways to spot a fake page.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="section-title">How a Phishing Attack Works</div>
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <div style="width:28px;height:28px;border-radius:50%;background:rgba(232,56,13,.2);color:var(--accent2);display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;flex-shrink:0;">1</div>
+              <div>
+                <strong>Attacker selects a target</strong>
+                <p style="font-size:.85rem;color:var(--muted);margin-top:3px;">Could be massdistributed or carefully targeted for example by using spear phishing, and using information gathered from social media or data leaks.</p>
+              </div>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <div style="width:28px;height:28px;border-radius:50%;background:rgba(232,56,13,.2);color:var(--accent2);display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;flex-shrink:0;">2</div>
+              <div>
+                <strong>Crafts a convincing message</strong>
+                <p style="font-size:.85rem;color:var(--muted);margin-top:3px;">Copies brand logos, uses correct terminology, references real transactions or events, and exploits psychological triggers.</p>
+              </div>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <div style="width:28px;height:28px;border-radius:50%;background:rgba(232,56,13,.2);color:var(--accent2);display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;flex-shrink:0;">3</div>
+              <div>
+                <strong>Victim clicks a link or attachment</strong>
+                <p style="font-size:.85rem;color:var(--muted);margin-top:3px;">Directed to a fake login webpage or downloads malware. The webpage looks identical to the real site.</p>
+              </div>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <div style="width:28px;height:28px;border-radius:50%;background:rgba(232,56,13,.2);color:var(--accent2);display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;flex-shrink:0;">4</div>
+              <div>
+                <strong>Credentials harvested or malware installed</strong>
+                <p style="font-size:.85rem;color:var(--muted);margin-top:3px;">Attacker gains access to accounts, financial data, or deploys ransomware across the network.</p>
+              </div>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <div style="width:28px;height:28px;border-radius:50%;background:rgba(34,197,94,.15);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;flex-shrink:0;">5</div>
+              <div>
+                <strong>Damage &amp; escalation</strong>
+                <p style="font-size:.85rem;color:var(--muted);margin-top:3px;">Account takeover, financial theft, data breach, ransomware deployment, or lateral movement through an organisation's network.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Types of phishing -->
+    <section class="page-section">
+      <div class="section-header">
+        <h2> Types of Phishing Attacks</h2>
+        <p>Phishing can arrive as broad spam or a highly focused scam. The delivery changes, but the goal is always the same: steal access, money, or sensitive data.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="info-card">
+          <div class="info-card-icon icon-red"></div>
+          <h3>Email Phishing</h3>
+          <p>Mass emails impersonate familiar brands and hope enough people take the bait. Even a tiny click rate can lead to thousands of compromised accounts.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon icon-amber"></div>
+          <h3>Spear Phishing</h3>
+          <p>This attack is personalised for a specific person or organisation. It uses real names, roles and details found online to make the message feel genuine.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon icon-blue"></div>
+          <h3>Whaling</h3>
+          <p>Targeting senior leaders means the payoff is high. An email that looks like it comes from a CEO or CFO can authorize large fraud payments.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon icon-purple"></div>
+          <h3>Smishing (SMS)</h3>
+          <p>Texts appear urgent and personal. A fake delivery notice or bank alert can feel normal, so people often trust it without checking the sender.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon icon-green"></div>
+          <h3>Vishing (Voice)</h3>
+          <p>Attackers call pretending to be your bank or IT support. Spoofed caller IDs and friendly scripts make the call seem legitimate.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon icon-red"></div>
+          <h3>Clone Phishing</h3>
+          <p>Here the attacker reuses a real email you already received, but swaps the safe links for dangerous ones. Familiarity makes it easier to trust.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon icon-amber"></div>
+          <h3>Search Engine Phishing</h3>
+          <p>Fake pages rank in search results for common services. People assume the site is genuine because it appeared through a search engine.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon icon-blue"></div>
+          <h3>Business Email Compromise</h3>
+          <p>A hacked or spoofed executive email instructs finance or HR to transfer money. It often looks like routine internal communication.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon icon-purple"></div>
+          <h3>AI-Generated Phishing</h3>
+          <p>AI tools now write phishing emails that sound natural, polite and very specific. They remove the obvious spelling and tone mistakes attackers used to make.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Evolution timeline -->
+    <section class="page-section">
+      <div class="section-header">
+        <h2>📈 How Phishing Has Evolved</h2>
+        <p>Phishing started as obvious spam, but it has become much more sophisticated. Today’s attacks use familiar brands, personal details, and AI-generated language to trick even cautious users.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">1990s — Early Phishing</div>
+            <div class="timeline-title">AOL Account Theft</div>
+            <div class="timeline-desc">The term "phishing" originates from hackers using fake AOL instant messages to steal account credentials. Early attacks were unsophisticated and easily spotted by careful users.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2000s — Banking & Mass Email</div>
+            <div class="timeline-title">Financial Institution Targeting</div>
+            <div class="timeline-desc">Attackers shifted to targeting banks. Mass email campaigns impersonating Barclays, PayPal, and eBay began. Fake websites copied real designs but lacked HTTPS.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2010s — Spear Phishing & APTs</div>
+            <div class="timeline-title">Targeted Corporate Attacks</div>
+            <div class="timeline-desc">Nation-state actors began using spear phishing for espionage (e.g., the 2016 DNC hack). Attacks became personalised using LinkedIn and social media data. HTTPS adoption made detection harder.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2018–2022 — Deepfakes & COVID</div>
+            <div class="timeline-title">Crisis-Exploiting Attacks</div>
+            <div class="timeline-desc">Phishing attacks surged 220% during COVID-19, exploiting fear and uncertainty. Voice cloning ("vishing") and deepfake video calls began impersonating executives to authorise transfers.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2023–Present — AI-Powered</div>
+            <div class="timeline-title">The LLM Phishing Revolution</div>
+            <div class="timeline-desc">ChatGPT and similar LLMs allow attackers to generate perfect, personalised phishing at industrial scale. QR code phishing ("quishing") bypasses email filters. MFA bypass toolkits commoditise advanced attacks.</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="card" style="margin-bottom:16px;">
+            <div class="section-title">Why AI Makes Phishing Harder to Detect</div>
+            <div style="font-size:.875rem;color:var(--muted);line-height:1.7;display:flex;flex-direction:column;gap:10px;">
+              <p>Today’s phishing is not just obvious spelling mistakes and poor design. AI tools can craft personalised, believable messages that match your name, company and recent activity, making scams much harder to spot.</p>
+              <p>That means looking only at how an email or webpage appears is no longer enough. Instead, users need clear guidance on why a message is suspicious and what specific cues to check.</p>
+              <p>Research shows explainable alerts that highlight dangerous features help people make better decisions, especially when the scam looks legitimate (Roy, Torres & Nilizadeh, 2025).</p>
+            </div>
+          </div>
+
+          <div class="highlight-box">
+            <div style="font-size:.85rem;font-weight:700;color:var(--accent2);margin-bottom:10px;">📊 Research Key Finding</div>
+            <p style="font-size:.875rem;color:var(--muted);line-height:1.65;">
+              Recent research (Roy, Torres & Nilizadeh, 2025) shows that generic security warnings are not enough. Users are far more likely to act safely when the alert explains exactly which features made the page or email suspicious.
+            </p>
+            <p style="font-size:.875rem;color:var(--muted);line-height:1.65;">
+              Another study on phishing awareness found many people still trust a message because it looks familiar, instead of checking the URL, sender and context first (Evaluating User Awareness of Phishing Threats, 2024). That means good security design must teach, not just warn.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Vulnerability table -->
+    <section class="page-section">
+      <div class="section-header">
+        <h2> Human Behavioural Vulnerabilities</h2>
+        <p>Phishing succeeds not because of technical sophistication, but because it exploits how humans think and behave under pressure.</p>
+      </div>
+
+      <div class="card">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Vulnerability</th>
+                <th>What Attackers Do</th>
+                <th>Security Impact</th>
+                <th>Risk</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Misinterpretation of warnings</strong></td>
+                <td>Overwhelm users with legitimate-looking pages that dismiss browser warnings</td>
+                <td>Users proceed to unsafe sites after ignoring SSL warnings</td>
+                <td><span class="badge badge-high">High</span></td>
+              </tr>
+              <tr>
+                <td><strong>Reliance on visual cues</strong></td>
+                <td>Copy logos, formatting, and colour schemes perfectly</td>
+                <td>Users trust appearance over URL verification</td>
+                <td><span class="badge badge-high">High</span></td>
+              </tr>
+              <tr>
+                <td><strong>Urgency &amp; fear response</strong></td>
+                <td>"Your account will be closed in 24 hours!"</td>
+                <td>Bypasses rational decision-making, creates impulsive action</td>
+                <td><span class="badge badge-high">High</span></td>
+              </tr>
+              <tr>
+                <td><strong>Authority bias</strong></td>
+                <td>Impersonate banks, HMRC, IT departments, or executives</td>
+                <td>People comply with perceived authority without questioning</td>
+                <td><span class="badge badge-high">High</span></td>
+              </tr>
+              <tr>
+                <td><strong>Familiarity trust</strong></td>
+                <td>Clone emails the user has received before (clone phishing)</td>
+                <td>Users trust messages that look familiar from previous experience</td>
+                <td><span class="badge badge-medium">Medium</span></td>
+              </tr>
+              <tr>
+                <td><strong>Ignoring suspicious cues</strong></td>
+                <td>Embed malicious URLs in professional-looking email</td>
+                <td>Subtle red flags (misspelt domain, http://) go unnoticed</td>
+                <td><span class="badge badge-medium">Medium</span></td>
+              </tr>
+              <tr>
+                <td><strong>Mobile context</strong></td>
+                <td>Send SMS/WhatsApp phishing (smishing)</td>
+                <td>URL preview hidden on mobile; informal channel reduces suspicion</td>
+                <td><span class="badge badge-medium">Medium</span></td>
+              </tr>
+              <tr>
+                <td><strong>Scarcity / reward lure</strong></td>
+                <td>"You've been selected as our lucky winner!"</td>
+                <td>Excitement overrides critical thinking about the source</td>
+                <td><span class="badge badge-low">Low</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: How to protect yourself -->
+    <section class="page-section">
+      <div class="section-header">
+        <h2>How to Protect Yourself</h2>
+        <p>A combination of technical measures and behavioural habits provides the strongest defence against phishing.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="section-title">✓ What You Should Do</div>
+          <ul class="checklist">
+            <li>Always check the <strong>full URL</strong> before entering credentials — hover over links to preview the destination</li>
+            <li>Verify requests by contacting the organisation <strong>directly through their official website</strong>, not via email links</li>
+            <li>Enable <strong>multi-factor authentication (MFA)</strong> on all accounts, especially email and banking</li>
+            <li>Use a <strong>password manager</strong> — it won't autofill credentials on fake sites</li>
+            <li>Keep software, browsers, and antivirus <strong>up to date</strong></li>
+            <li>Report suspicious emails to your IT department and to the <strong>NCSC (report@phishing.gov.uk)</strong></li>
+            <li>Check that websites use <strong>HTTPS</strong> and that the padlock appears before any domain you trust</li>
+            <li>Use this toolkit or similar tools to <strong>scan suspicious URLs or emails</strong> before interacting with them</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="section-title">✗ What to Avoid</div>
+          <ul class="checklist cross-list">
+            <li>Never click links in unexpected emails — go directly to the website by typing the URL</li>
+            <li>Never provide your <strong>password, PIN, or full card number</strong> via email, phone, or text — no legitimate organisation asks for these</li>
+            <li>Do not trust an email just because it <strong>looks professional</strong> or has a familiar logo</li>
+            <li>Never open <strong>unexpected attachments</strong>, especially .html, .exe, .zip, or .js files</li>
+            <li>Don't assume <strong>HTTPS means safe</strong> — phishing sites can and do obtain SSL certificates</li>
+            <li>Avoid using <strong>public Wi-Fi</strong> for banking or sensitive logins without a VPN</li>
+            <li>Don't reuse passwords — a <strong>single breach</strong> can compromise multiple accounts</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Current legal/regulatory landscape -->
+    <section class="page-section">
+      <div class="section-header">
+        <h2>⚖ Legal &amp; Regulatory Landscape</h2>
+        <p>Despite efforts, phishing remains difficult to prosecute due to the anonymous, borderless nature of cyberspace.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="info-card">
+          <div class="info-card-icon icon-blue">🇬🇧</div>
+          <h3>Computer Misuse Act 1990</h3>
+          <p>UK legislation criminalising unauthorised computer access. Phishing falls under Section 2 (unauthorised access with intent to commit further offences). Carries up to 5 years imprisonment.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon icon-amber"></div>
+          <h3>GDPR &amp; Data Protection</h3>
+          <p>Organisations that suffer phishing-enabled data breaches face significant GDPR fines of up to 4% of global annual turnover. This has driven investment in security training.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon icon-red"></div>
+          <h3>The Enforcement Gap</h3>
+          <p>Most phishers operate across international boundaries. Attribution is difficult, and many jurisdictions have weak cybercrime enforcement — meaning most attackers are never prosecuted.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon icon-green"></div>
+          <h3>NCSC &amp; DMARC</h3>
+          <p>The UK's NCSC has championed DMARC email authentication — reducing UK government domain spoofing by 99%. Organisations implementing DMARC, DKIM, and SPF significantly reduce phishing risk.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon icon-purple"></div>
+          <h3>Takedown Challenges</h3>
+          <p>Phishing sites are typically active for only hours before being reported and taken down. Attackers register dozens of backup domains in advance, maintaining availability through rapid rotation.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon icon-blue"></div>
+          <h3>Industry Response</h3>
+          <p>Google Safe Browsing, Microsoft Defender, and browser-based phishing detection now block millions of malicious URLs daily — but sophisticated, newly-registered phishing sites evade these systems initially.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="cta-bar">
+      <h2>Test Your Phishing Recognition Skills</h2>
+      <p>Use the detection toolkit to analyse real URLs and emails. Each indicator includes an educational explanation to help you recognise phishing in the wild.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <a href="/" class="btn btn-primary">Open the Detector</a>
+        <a href="#what-is" class="btn btn-secondary">↑ Back to top</a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <p>Phishing Awareness Toolkit — Built for Phishing Awareness & Education</p>
+  <p>References:</p>
+  <ul>
+    <li>Sheng, S., Holbrook, M., Kumaraguru, P., Cranor, L. F., & Downs, J. (2010). Who falls for phish? *Proceedings of the 28th international conference on Human factors in computing systems*.</li>
+    <li>Cranor, L. F. (2008). A framework for reasoning about the human in the loop. *Proceedings of the 1st Conference on Usability, Psychology, and Security*.</li>
+    <li>Bergholz, A., De Beer, J., Glahn, S., Moens, M., Paaß, G., & Strobel, S. (2010). New filtering approaches for phishing email. *Journal of Computer Security*.</li>
+    <li>Roy, S., Torres, M., & Nilizadeh, A. (2025). Explainable phishing alerts and user behaviour. *arXiv*.</li>
+    <li>Evaluating User Awareness of Phishing Threats: Implications for Web Application Security Design. (2024). *ResearchGate*.</li>
+  </ul>
+</footer>
+
+</body>
+</html>
