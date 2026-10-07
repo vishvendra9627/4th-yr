@@ -1,0 +1,254 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    width: 380px;
+    min-height: 450px;
+
+    font-family: Arial, sans-serif;
+
+    background: #0f172a;
+    color: #e2e8f0;
+}
+
+.container {
+    padding: 20px;
+}
+
+/* Header */
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 20px;
+}
+
+.logo {
+    font-size: 30px;
+}
+
+.header h1 {
+    margin: 0;
+
+    font-size: 20px;
+}
+
+.header p {
+    margin: 3px 0 0;
+
+    font-size: 12px;
+
+    color: #94a3b8;
+}
+
+/* Website */
+
+.website-box {
+    padding: 14px;
+
+    border-radius: 10px;
+
+    background: #1e293b;
+
+    margin-bottom: 15px;
+}
+
+.label {
+    font-size: 10px;
+
+    color: #94a3b8;
+
+    margin-bottom: 7px;
+}
+
+.url {
+    font-size: 13px;
+
+    word-break: break-all;
+
+    color: #cbd5e1;
+}
+
+/* Button */
+
+.scan-btn {
+    width: 100%;
+
+    border: none;
+    border-radius: 8px;
+
+    padding: 12px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.scan-btn:hover {
+    background: #1d4ed8;
+}
+
+.scan-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Loading */
+
+.loading {
+    text-align: center;
+
+    padding: 20px;
+}
+
+.spinner {
+    width: 28px;
+    height: 28px;
+
+    margin: auto;
+
+    border: 3px solid #334155;
+    border-top: 3px solid #3b82f6;
+
+    border-radius: 50%;
+
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Result */
+
+.result {
+    margin-top: 20px;
+}
+
+.verdict {
+    text-align: center;
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+.verdict.safe {
+    background: #064e3b;
+    color: #6ee7b7;
+}
+
+.verdict.suspicious {
+    background: #78350f;
+    color: #fcd34d;
+}
+
+.verdict.phishing {
+    background: #7f1d1d;
+    color: #fca5a5;
+}
+
+/* Score */
+
+.score-container {
+    text-align: center;
+
+    margin: 15px 0;
+}
+
+.score {
+    font-size: 42px;
+
+    font-weight: bold;
+}
+
+.score-label {
+    color: #94a3b8;
+
+    font-size: 12px;
+}
+
+/* Summary */
+
+.summary {
+    color: #cbd5e1;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+/* Indicators */
+
+.section-title {
+    margin-top: 18px;
+    margin-bottom: 8px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+.indicator {
+    padding: 10px;
+
+    margin-bottom: 7px;
+
+    border-radius: 7px;
+
+    background: #1e293b;
+
+    font-size: 12px;
+}
+
+.indicator.high {
+    border-left: 4px solid #ef4444;
+}
+
+.indicator.medium {
+    border-left: 4px solid #f59e0b;
+}
+
+.indicator.low {
+    border-left: 4px solid #22c55e;
+}
+
+/* Error */
+
+.error {
+    margin-top: 15px;
+
+    padding: 10px;
+
+    border-radius: 7px;
+
+    background: #7f1d1d;
+
+    color: #fecaca;
+
+    font-size: 12px;
+}
+
+.hidden {
+    display: none;
+}

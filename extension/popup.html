@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PhishGuard</title>
+
+    <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <div class="logo">🛡️</div>
+
+        <div>
+            <h1>PhishGuard</h1>
+            <p>Phishing Detection</p>
+        </div>
+    </div>
+
+    <div class="website-box">
+
+        <div class="label">
+            CURRENT WEBSITE
+        </div>
+
+        <div id="url" class="url">
+            Loading...
+        </div>
+
+    </div>
+
+    <button id="scanBtn" class="scan-btn">
+        🔍 Scan Website
+    </button>
+
+    <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+        <p>Analyzing website...</p>
+    </div>
+
+    <div id="error" class="error hidden"></div>
+
+    <div id="result" class="result hidden">
+
+        <div id="verdict" class="verdict">
+            SAFE
+        </div>
+
+        <div class="score-container">
+
+            <div class="score">
+                <span id="score">0</span>%
+            </div>
+
+            <div class="score-label">
+                Risk Score
+            </div>
+
+        </div>
+
+        <p id="summary" class="summary"></p>
+
+        <div class="section-title">
+            Detected Indicators
+        </div>
+
+        <div id="indicators"></div>
+
+    </div>
+
+</div>
+
+<script src="popup.js"></script>
+
+</body>
+</html>

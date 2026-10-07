@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "PhishGuard - Phishing Detector",
+  "version": "1.0.0",
+  "description": "Detect potentially malicious and phishing websites using machine learning.",
+  "permissions": [
+    "activeTab"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
