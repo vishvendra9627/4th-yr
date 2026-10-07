@@ -37,6 +37,11 @@ frontend/
   popup.js        Educational indicator popup logic
   style.css       Styling
 
+extension/
+  manifest.json
+  popup.css
+  popup.html
+  popup.js
 Dataset/
   phishing_site_urls.csv    URL training data
   email_phishing_data.csv   Email training data
