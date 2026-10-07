@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api/analyze";
+const API_URL = "https://fourth-yr.onrender.com/api/analyze";
 
 const urlElement = document.getElementById("url");
 const scanBtn = document.getElementById("scanBtn");
